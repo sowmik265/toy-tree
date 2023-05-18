@@ -7,17 +7,22 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Blog from './pages/Blog.jsx';
-import ErrorPage from './components/error page/ErrorPage.jsx';
+// import ErrorPage from './components/error page/ErrorPage.jsx';
+import Register from './components/login & signin/Register.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement: <ErrorPage></ErrorPage>,
+    // errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "blog",
         element: <Blog></Blog>
+      },
+      {
+        path:"register",
+        element:<Register></Register>
       }
     ]
   },
