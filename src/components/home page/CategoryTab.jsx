@@ -7,7 +7,7 @@ const CategoryTab = ({toy}) => {
         <div>
             <Tabs>
                 <TabList className='flex justify-center gap-5 bg-cyan-700 font-bold'>
-                    <Tab>asfdsaf</Tab>
+                    <Tab>Sports cars</Tab>
                     <Tab>Off-Road Vehicles</Tab>
                     <Tab>Classic Cars</Tab>
                 </TabList>
@@ -17,7 +17,7 @@ const CategoryTab = ({toy}) => {
                         <div className="card card-compact w-96 bg-base-100 shadow-xl">
                             <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">{toy.toy_name1}</h2>
+                                <h2 className="card-title">{}</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                                 <div className="card-actions justify-end">
                                     <button className="btn btn-primary">Buy Now</button>
