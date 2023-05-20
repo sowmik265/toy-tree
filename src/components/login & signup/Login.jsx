@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
 
-    const { signIn, googleLogIn,} = useContext(AuthContext);
-    const [error,setError] =useState('');
+    const { signIn, googleLogIn, } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const notify = () => toast("Log in Successful!");
 
     const handleUserLogin = (e) => {
         e.preventDefault();
@@ -19,6 +23,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                form.reset();
             })
             .catch(error => {
                 console.log(error);
@@ -50,7 +55,7 @@ const Login = () => {
 
 
 
-                    <form className="mt-6">
+                    <form onSubmit={handleUserLogin} className="mt-6">
                         <div className="mb-2">
                             <label
                                 for="email"
@@ -79,9 +84,9 @@ const Login = () => {
                                 className="block w-full px-4 py-2 mt-2 text-rose-600 bg-white border rounded-md focus:border-rose-400 focus:ring-rose-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
                         </div>
-                        {/* <div>
+                        <div>
                             <p>{error}</p>
-                        </div> */}
+                        </div>
                         <a
                             href="#"
                             className="text-xs text-gray-300 hover:underline"

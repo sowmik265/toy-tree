@@ -4,7 +4,7 @@ import { MdOutlineToys } from 'react-icons/md';
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
-    const { user , logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -22,20 +22,20 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-gray-300">
                         <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
-                        <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
                         {
-                            user &&
-                            <div className='flex'>
-                                <li>
-                                    <div className="navbar-end">
-                                        <div className="w-24 rounded-full">
-                                            <img className='image-full rounded-full' src={user?.photoURL} title={user?.displayName} />
+                            user ?
+                                <div className='flex'>
+                                    <li>
+                                        <div className="navbar-end">
+                                            <div className="">
+                                                <img className='image-full rounded-full w-24' src={user?.photoURL} title={user?.displayName} />
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
-                            </div>
+                                    </li>
+                                    <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
+                                </div> :
+                                <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
                         }
                     </ul>
                 </div>
@@ -52,8 +52,8 @@ const Header = () => {
                             <div className='flex'>
                                 <li>
                                     <div className="navbar-end">
-                                        <div className="w-24 rounded-full">
-                                            <img className='image-full rounded-full' src={user?.photoURL} title={user?.displayName} />
+                                        <div className="">
+                                            <img className='image-full w-24 rounded-full' src={user?.photoURL} title={user?.displayName} />
                                         </div>
                                     </div>
                                 </li>
