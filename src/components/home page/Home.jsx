@@ -7,11 +7,12 @@ import Gallary from './Gallary';
 const Home = () => {
     return (
         <div className='container p-5'>
-            <Gallary></Gallary>
-            <Category></Category>
             <Banner></Banner>
+            <Gallary></Gallary>
             <AnimationText></AnimationText>
+            <Category></Category>
             
+
         </div>
     );
 };
