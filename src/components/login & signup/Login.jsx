@@ -1,53 +1,42 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { AuthContext } from '../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProviders';
+
 
 const Login = () => {
 
-    // const { signIn, googleLogIn, gitHubLogIn, } = useContext(AuthContext);
-    // const [error,setError] =useState('')
+    const { signIn, googleLogIn,} = useContext(AuthContext);
+    const [error,setError] =useState('');
 
-    // const handleUserLogin = (e) => {
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(email, password)
+    const handleUserLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
 
-    //     signIn(email, password)
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //             setError(error.message)
-    //         })
-    // }
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+            })
+    }
 
-    // const handleLogInGoogle = () => {
-    //     googleLogIn()
-    //         .then(result => {
-    //             const user = result.user
-    //             console.log(user)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // }
+    const handleLogInGoogle = () => {
+        googleLogIn()
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
-    // const handleLogInGitHub = () => {
-    //     gitHubLogIn()
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser)
-
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-
-    // }
 
     return (
         <div>
@@ -116,6 +105,7 @@ const Login = () => {
                     </div>
                     <div className="my-6 space-y-2">
                         <button
+                            onClick={handleLogInGoogle}
                             aria-label="Login with Google"
                             type="button"
                             className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"

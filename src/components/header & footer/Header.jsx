@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ActiveLink from '../active routes/ActiveLink';
 import { MdOutlineToys } from 'react-icons/md';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
+    const { user , logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
     return (
 
         <div className="navbar bg-cyan-700 p-8">
@@ -16,7 +24,7 @@ const Header = () => {
                         <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
-                        {/* {
+                        {
                             user &&
                             <div className='flex'>
                                 <li>
@@ -28,7 +36,7 @@ const Header = () => {
                                 </li>
                                 <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
                             </div>
-                        } */}
+                        }
                     </ul>
                 </div>
                 <a className="btn btn-ghost  text-4xl font-bold text-gray-300 font-mono">TOY <MdOutlineToys></MdOutlineToys>TREE</a>
@@ -39,20 +47,20 @@ const Header = () => {
                     <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
 
                     <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
-                    {/* {
+                    {
                         user ?
-                        <div className='flex'>
-                            <li>
-                                <div className="navbar-end">
-                                    <div className="w-24 rounded-full">
-                                        <img className='image-full rounded-full' src={user?.photoURL} title={user?.displayName} />
+                            <div className='flex'>
+                                <li>
+                                    <div className="navbar-end">
+                                        <div className="w-24 rounded-full">
+                                            <img className='image-full rounded-full' src={user?.photoURL} title={user?.displayName} />
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
-                        </div> :
-                        <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
-                    } */}
+                                </li>
+                                <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
+                            </div> :
+                            <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
+                    }
                 </ul>
             </div>
 

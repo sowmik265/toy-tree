@@ -10,6 +10,8 @@ import Blog from './pages/Blog.jsx';
 // import ErrorPage from './components/error page/ErrorPage.jsx';
 import Register from './components/login & signup/Register.jsx';
 import Login from './components/login & signup/Login.jsx';
+import Home from './components/home page/Home.jsx';
+import AuthProviders from './providers/AuthProviders.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
     element: <App></App>,
     // errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
       {
         path: "blog",
         element: <Blog></Blog>
@@ -36,6 +42,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProviders><RouterProvider router={router} /></AuthProviders>
   </React.StrictMode>,
 )
