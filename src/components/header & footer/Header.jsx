@@ -21,6 +21,7 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-gray-300">
                         <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
+                        <li className='font-extrabold'><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/addatoy'>Add a Toy</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
@@ -45,6 +46,7 @@ const Header = () => {
             <div className="navbar-end hidden lg:flex text-gray-300">
                 <ul className="menu menu-horizontal px-1">
                     <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
+                    <li className='font-extrabold'><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/addatoy'>Add a Toy</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
 

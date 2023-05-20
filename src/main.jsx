@@ -13,6 +13,8 @@ import Login from './components/login & signup/Login.jsx';
 import Home from './components/home page/Home.jsx';
 import AuthProviders from './providers/AuthProviders.jsx';
 import AddAToy from './components/pages/AddAToy.jsx';
+import AllToys from './components/pages/AllToys.jsx';
+import ToyDetails from './components/pages/ToyDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,16 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: 'alltoys',
+        element: <AllToys></AllToys>,
+        loader: () => fetch('http://localhost:5000/toy')
+      },
+      {
+        path:'toydetails/:toyId',
+        element:<ToyDetails></ToyDetails>,
+        loader: () => fetch('http://localhost:5000/toy')
       },
       {
         path: "addatoy",
