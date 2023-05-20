@@ -1,0 +1,63 @@
+[
+    {
+      "picture1": "https://example.com/toy1.jpg",
+      "toy_name1": "Toy 1",
+      "seller_name1": "Seller 1",
+      "seller_email1": "seller1@example.com",
+      "price1": 19.99,
+      "rating1": 4.5,
+      "available_quantity1": 10,
+      "detail_description1": "Toy 1 is a fun and interactive toy for kids. It comes with various features and is suitable for children aged 3 and above."
+    },
+    {
+      "picture2": "https://example.com/toy2.jpg",
+      "toy_name2": "Toy 2",
+      "seller_name2": "Seller 2",
+      "seller_email2": "seller2@example.com",
+      "price2": 29.99,
+      "rating2": 4.2,
+      "available_quantity2": 5,
+      "detail_description2": "Toy 2 is a creative building set that allows kids to construct various structures. It promotes problem-solving skills and is recommended for children aged 5 and above."
+    },
+    {
+      "picture3": "https://example.com/toy3.jpg",
+      "toy_name3": "Toy 3",
+      "seller_name3": "Seller 3",
+      "seller_email3": "seller3@example.com",
+      "price3": 14.99,
+      "rating3": 4.7,
+      "available_quantity3": 8,
+      "detail_description3": "Toy 3 is a plush stuffed animal that brings comfort and companionship. It's perfect for cuddling and is suitable for kids of all ages."
+    },
+    {
+      "picture4": "https://example.com/toy4.jpg",
+      "toy_name4": "Toy 4",
+      "seller_name4": "Seller 4",
+      "seller_email4": "seller4@example.com",
+      "price4": 39.99,
+      "rating4": 4.9,
+      "available_quantity4": 2,
+      "detail_description4": "Toy 4 is an educational puzzle game that challenges kids to solve complex problems. It enhances logical thinking and is suitable for children aged 6 and above."
+    },
+    {
+      "picture5": "https://example.com/toy5.jpg",
+      "toy_name5": "Toy 5",
+      "seller_name5": "Seller 5",
+      "seller_email5": "seller5@example.com",
+      "price5": 24.99,
+      "rating5": 4.3,
+      "available_quantity5": 7,
+      "detail_description5": "Toy 5 is a musical instrument set that introduces kids to the world of music. It includes various instruments and is recommended for children aged 4 and above."
+    },
+    {
+      "picture6": "https://example.com/toy6.jpg",
+      "toy_name6": "Toy 6",
+      "seller_name6": "Seller 6",
+      "seller_email6": "seller6@example.com",
+      "price6": 9.99,
+      "rating6": 4.0,
+      "available_quantity6": 12,
+      "detail_description6": "Toy 6 is a classic board game that provides hours of entertainment for the whole family. It's suitable for players of all ages and encourages strategic thinking."
+    }
+  ]
+  

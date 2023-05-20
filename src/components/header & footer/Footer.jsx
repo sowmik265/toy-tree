@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className="mb-6 md:mb-0">
                             <a className="btn btn-ghost  text-4xl font-bold text-gray-300 font-mono">TOY <MdOutlineToys></MdOutlineToys>TREE</a>
                         </div>
-                        <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div className="grid gap-10 grid-cols-3">
                             <div>
                                 <h2 className="mb-6 text-sm font-semibold text-gray-200 uppercase dark:text-white">Resources</h2>
                                 <ul className="text-gray-400 dark:text-gray-400 font-medium">
