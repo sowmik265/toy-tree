@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+import Swal from 'sweetalert2';
 
 
 const auth = getAuth(app);
@@ -26,14 +27,22 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser)
-                updateUserData(result.user, name , photo)
+                updateUserData(result.user, name, photo)
+                if (createUser) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Registration Complete',
+                        icon: 'success',
+                        confirmButtonText: 'Thank you!'
+                    })
+                }
+                form.reset();
+                setError("");
             })
             .catch(error => {
                 console.log(error);
                 setError(error.message)
             })
-
-
 
     }
 

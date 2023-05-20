@@ -1,16 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
     const { signIn, googleLogIn, } = useContext(AuthContext);
     const [error, setError] = useState('');
-
-    const notify = () => toast("Log in Successful!");
 
     const handleUserLogin = (e) => {
         e.preventDefault();
@@ -23,7 +19,16 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                if (loggedUser) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'You Have Succesfully Logged In!',
+                        icon: 'success',
+                        confirmButtonText: 'Thank you!'
+                    })
+                }
                 form.reset();
+                setError("");
             })
             .catch(error => {
                 console.log(error);
@@ -85,7 +90,7 @@ const Login = () => {
                             />
                         </div>
                         <div>
-                            <p>{error}</p>
+                            <p className='text-rose-600'>{error}</p>
                         </div>
                         <a
                             href="#"

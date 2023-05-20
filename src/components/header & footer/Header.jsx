@@ -43,7 +43,7 @@ const Header = () => {
                 </div>
                 <a className="btn btn-ghost  text-4xl font-bold text-gray-300 font-mono">TOY <MdOutlineToys></MdOutlineToys>TREE</a>
             </div>
-            <div className="navbar-end hidden lg:flex text-gray-300">
+            <div className="navbar-middle hidden lg:flex text-gray-300">
                 <ul className="menu menu-horizontal px-1">
                     <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
@@ -53,7 +53,7 @@ const Header = () => {
                     <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
                     {
                         user ?
-                            <div className='flex'>
+                            <div className='flex gap-0'>
                                 <li>
                                     <div className="navbar-end">
                                         <div className="">
