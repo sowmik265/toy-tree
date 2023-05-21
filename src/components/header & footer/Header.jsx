@@ -24,6 +24,7 @@ const Header = () => {
                         <li className='font-extrabold'><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/addatoy'>Add a Toy</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
+                        <li className='font-extrabold'><ActiveLink to='/mytoy'>My Toys</ActiveLink></li>
                         <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
                         {
                             user ?
@@ -48,8 +49,8 @@ const Header = () => {
                     <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/addatoy'>Add a Toy</ActiveLink></li>
+                    <li className='font-extrabold'><ActiveLink to='/mytoy'>My Toys</ActiveLink></li>
                     <li className='font-extrabold'><ActiveLink to='/blog'>Blog</ActiveLink></li>
-
                     <li className='font-extrabold'><ActiveLink to='/register'>Register</ActiveLink></li>
                     {
                         user ?
