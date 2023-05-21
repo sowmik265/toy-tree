@@ -41,6 +41,7 @@ const AddAToy = () => {
                         confirmButtonText: 'Thank you!'
                     })
                 }
+                // form.reset();
             })
     }
 

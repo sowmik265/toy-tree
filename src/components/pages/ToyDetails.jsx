@@ -24,7 +24,6 @@ const ToyDetails = () => {
                         <p className='font-bold text-gray-300'>Sub-category : <span className='text-black'>{category}</span></p>
                         <p className='font-bold text-gray-300'>Seller : <span className='text-black'>{seller}</span></p>
                         <p className='font-bold text-gray-300'>Seller Email : <span className='text-black'>{email}</span></p>
-                        <p className='font-bold text-gray-300'>Seller Email : <span className='text-black'>{email}</span></p>
                         <p className='font-bold text-gray-300'>Price : <span className='text-black'>{price} $</span></p>
                         <p className='font-bold text-gray-300'>Ratings : <span className='text-black'>{rating}</span></p>
                         <p className='font-bold text-gray-300'>Available Quantity : <span className='text-black'>{quantity} pcs</span></p>
