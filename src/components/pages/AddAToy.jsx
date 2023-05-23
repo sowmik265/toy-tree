@@ -23,7 +23,7 @@ const AddAToy = () => {
         console.log(newToy);
 
         // send data to server
-        fetch('http://localhost:5000/toy', {
+        fetch('https://toy-tree-server-two.vercel.app/toy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

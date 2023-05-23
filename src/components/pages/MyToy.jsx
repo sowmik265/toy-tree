@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
-import MyToyDetails from './MyToyDetails';
 import Swal from 'sweetalert2';
+import UpdateToyModal from './UpdateToyModal';
 
 const MyToy = () => {
 
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/toy?email=${user?.email}`;
+    const [modalShow, setModalShow] = React.useState(false);
+    const [control, setControl] = useState(false);
+
+    const url = `https://toy-tree-server-two.vercel.app/toy?email=${user?.email}`;
     const [myToys, setMyToys] = useState([])
     useEffect(() => {
         fetch(url)
@@ -21,7 +24,7 @@ const MyToy = () => {
             'question'
         )
         if (proceed) {
-            fetch(`http://localhost:5000/toy/${id}`, {
+            fetch(`https://toy-tree-server-two.vercel.app/toy/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -41,6 +44,22 @@ const MyToy = () => {
         }
     }
 
+    const handleToyUpdate = (data) => {
+        console.log(data);
+        fetch(`https://toy-tree-server-two.vercel.app/${data._id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.modifiedCount > 0) {
+                    setControl(!control);
+                }
+                console.log(result);
+            });
+    };
+
 
     return (
         <div>
@@ -55,19 +74,38 @@ const MyToy = () => {
                             <th>Sub-category</th>
                             <th>Price</th>
                             <th>Available Quantity</th>
-                            <th>Updation</th>
+                            <th>Status</th>
                             <th>Deletion</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            myToys.map(myToy => <MyToyDetails
-                                key={myToy._id}
-                                myToy={myToy}
-                                handleDelete={handleDelete}
-                            // handleBookingConfirm={handleBookingConfirm}
-                            ></MyToyDetails>)
+                            myToys?.map(myToy => (
+                                <tr>
+                                    <td> {myToy?.seller} </td>
+                                    <td> {myToy?.name} </td>
+                                    <td> {myToy?.category} </td>
+                                    <td> {myToy?.price} </td>
+                                    <td> {myToy?.quantity} </td>
+                                    <td><label htmlFor="my-modal-6" className="btn 'bg-red-600 px-4 py-1 rounded font-bold text-gray-300">Update</label>
+
+
+                                        <UpdateToyModal
+                                            show={modalShow}
+                                            onHide={() => setModalShow(false)}
+                                            myToy={MyToy}
+                                            handleToyUpdate={handleToyUpdate}
+                                        />
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button onClick={() => handleDelete(myToy?._id)} className='bg-red-600 px-4 py-1 rounded font-bold text-gray-300'>Delete</button></td>
+                                </tr
+                                >))
                         }
                     </tbody>
 

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Blog from './pages/Blog.jsx';
-// import ErrorPage from './components/error page/ErrorPage.jsx';
+import ErrorPage from './components/error page/ErrorPage.jsx';
 import Register from './components/login & signup/Register.jsx';
 import Login from './components/login & signup/Login.jsx';
 import Home from './components/home page/Home.jsx';
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -31,12 +31,12 @@ const router = createBrowserRouter([
       {
         path: 'alltoys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/toy')
+        loader: () => fetch('https://toy-tree-server-two.vercel.app/toy?limit=20')
       },
       {
         path:'toydetails/:toyId',
         element:<PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/toy')
+        loader: () => fetch('https://toy-tree-server-two.vercel.app/toy')
       },
       {
         path: "addatoy",
